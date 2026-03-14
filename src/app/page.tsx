@@ -291,14 +291,14 @@ export default function Home() {
 
           <div className="mx-auto max-w-lg">
             <a
-              href="mailto:xyz@sarvahq.com"
+              href="mailto:shubham@sarvahq.com"
               className="group inline-flex items-center gap-3 rounded-2xl border border-border bg-surface px-10 py-5 transition-all hover:border-accent/30 hover:bg-surface-light"
             >
               <svg className="h-6 w-6 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
               </svg>
               <span className="text-lg font-medium text-secondary">
-                xyz@sarvahq.com
+                shubham@sarvahq.com
               </span>
             </a>
 
