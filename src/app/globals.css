@@ -1,14 +1,18 @@
 @import "tailwindcss";
 
 @theme {
-  --color-primary: #0a0a0a;
-  --color-secondary: #fafafa;
+  --color-primary: #050505;
+  --color-secondary: #f5f5f5;
   --color-accent: #2563eb;
   --color-accent-light: #3b82f6;
-  --color-muted: #a1a1aa;
-  --color-border: #27272a;
-  --color-surface: #111111;
-  --color-surface-light: #1a1a1a;
+  --color-accent-dim: #1e40af;
+  --color-muted: #737373;
+  --color-muted-light: #a3a3a3;
+  --color-border: #1a1a1a;
+  --color-border-light: #262626;
+  --color-surface: #0a0a0a;
+  --color-surface-light: #111111;
+  --color-surface-elevated: #141414;
 }
 
 html {
@@ -16,19 +20,16 @@ html {
 }
 
 body {
-  background-color: #0a0a0a;
-  color: #fafafa;
+  background-color: #050505;
+  color: #f5f5f5;
+  font-feature-settings: "ss01", "ss02", "cv01";
 }
 
+/* ── Animations ── */
+
 @keyframes fade-in-up {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 @keyframes fade-in {
@@ -37,12 +38,8 @@ body {
 }
 
 @keyframes pulse-glow {
-  0%, 100% {
-    box-shadow: 0 0 20px rgba(37, 99, 235, 0.15);
-  }
-  50% {
-    box-shadow: 0 0 40px rgba(37, 99, 235, 0.3);
-  }
+  0%, 100% { box-shadow: 0 0 20px rgba(37, 99, 235, 0.12); }
+  50% { box-shadow: 0 0 50px rgba(37, 99, 235, 0.25); }
 }
 
 @keyframes gradient-shift {
@@ -51,30 +48,196 @@ body {
   100% { background-position: 0% 50%; }
 }
 
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+}
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+@keyframes line-grow {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+@keyframes scale-in {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes orbit {
+  from { transform: rotate(0deg) translateX(140px) rotate(0deg); }
+  to { transform: rotate(360deg) translateX(140px) rotate(-360deg); }
+}
+
 .animate-fade-in-up {
-  animation: fade-in-up 0.8s ease-out forwards;
+  animation: fade-in-up 0.7s cubic-bezier(0.16, 1, 0.3, 1) both;
 }
 
 .animate-fade-in {
-  animation: fade-in 0.6s ease-out forwards;
+  animation: fade-in 0.5s ease-out both;
 }
 
 .animate-pulse-glow {
   animation: pulse-glow 3s ease-in-out infinite;
 }
 
+.animate-scale-in {
+  animation: scale-in 0.6s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.animate-marquee {
+  animation: marquee 30s linear infinite;
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+/* ── Gradient text ── */
+
 .gradient-text {
-  background: linear-gradient(135deg, #ffffff 0%, #2563eb 50%, #ffffff 100%);
+  background: linear-gradient(135deg, #ffffff 0%, #2563eb 50%, #60a5fa 100%);
   background-size: 200% 200%;
-  animation: gradient-shift 6s ease infinite;
+  animation: gradient-shift 5s ease infinite;
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
+.gradient-text-subtle {
+  background: linear-gradient(135deg, #e5e5e5 0%, #2563eb 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* ── Grid background ── */
+
 .grid-bg {
   background-image:
-    linear-gradient(rgba(37, 99, 235, 0.03) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(37, 99, 235, 0.03) 1px, transparent 1px);
-  background-size: 60px 60px;
+    linear-gradient(rgba(37, 99, 235, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(37, 99, 235, 0.04) 1px, transparent 1px);
+  background-size: 80px 80px;
+}
+
+/* ── Noise overlay ── */
+
+.noise-overlay::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ── Glow orbs ── */
+
+.glow-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  pointer-events: none;
+}
+
+.glow-orb-blue {
+  background: radial-gradient(circle, rgba(37, 99, 235, 0.15), transparent 70%);
+}
+
+.glow-orb-white {
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.03), transparent 70%);
+}
+
+/* ── Bento card hover ── */
+
+.bento-card {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.bento-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(135deg, transparent 0%, rgba(37, 99, 235, 0) 40%, rgba(37, 99, 235, 0.15) 100%);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.bento-card:hover::before {
+  opacity: 1;
+}
+
+.bento-card:hover {
+  transform: translateY(-2px);
+  background-color: #111111;
+}
+
+/* ── Timeline connector ── */
+
+.timeline-line {
+  position: relative;
+}
+
+.timeline-line::after {
+  content: "";
+  position: absolute;
+  top: 24px;
+  left: 48px;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, rgba(37, 99, 235, 0.4), rgba(37, 99, 235, 0.05));
+}
+
+/* ── Logo hover ── */
+
+.logo-item {
+  opacity: 0.4;
+  transition: opacity 0.3s ease;
+  filter: grayscale(1) brightness(2);
+}
+
+.logo-item:hover {
+  opacity: 0.9;
+}
+
+/* ── Section divider ── */
+
+.section-divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(37, 99, 235, 0.2), transparent);
+}
+
+/* ── Marquee ── */
+
+.marquee-track {
+  display: flex;
+  width: max-content;
+}
+
+.marquee-container {
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(90deg, transparent, white 10%, white 90%, transparent);
+  mask-image: linear-gradient(90deg, transparent, white 10%, white 90%, transparent);
+}
+
+/* ── Number highlight ── */
+
+.number-highlight {
+  font-variant-numeric: tabular-nums;
+  background: linear-gradient(180deg, #f5f5f5, #737373);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
