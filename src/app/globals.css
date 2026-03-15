@@ -200,15 +200,37 @@ body {
   background: linear-gradient(90deg, rgba(37, 99, 235, 0.4), rgba(37, 99, 235, 0.05));
 }
 
+/* ── Logo images ── */
+
+.logo-image {
+  filter: brightness(0) invert(0.7);
+  transition: filter 0.3s ease, opacity 0.3s ease;
+  object-fit: contain;
+}
+
+.group:hover .logo-image {
+  filter: brightness(0) invert(0.9);
+}
+
 /* ── Logo hover ── */
 
 .logo-item {
   opacity: 0.4;
-  transition: opacity 0.3s ease;
+  transition: opacity 0.3s ease, filter 0.3s ease;
   filter: grayscale(1) brightness(2);
 }
 
 .logo-item:hover {
+  opacity: 0.9;
+}
+
+.logo-item.logo-image {
+  filter: brightness(0) invert(0.5);
+  opacity: 0.6;
+}
+
+.logo-item.logo-image:hover {
+  filter: brightness(0) invert(0.9);
   opacity: 0.9;
 }
 

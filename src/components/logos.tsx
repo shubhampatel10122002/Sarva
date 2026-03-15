@@ -1,12 +1,36 @@
-/* Clean monochrome SVG logos for dark backgrounds */
+/* Brand and institution logos */
+/* PacSun and SilverTech remain as inline SVGs; all others use actual brand images */
+
+import Image from "next/image";
+
+function LogoImage({
+  src,
+  alt,
+  className = "",
+}: {
+  src: string;
+  alt: string;
+  className?: string;
+}) {
+  return (
+    <Image
+      src={src}
+      alt={alt}
+      width={200}
+      height={40}
+      className={`logo-image ${className}`}
+      draggable={false}
+    />
+  );
+}
 
 export function FootLockerLogo({ className = "" }: { className?: string }) {
   return (
-    <svg className={className} viewBox="0 0 180 32" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-      <text x="0" y="24" fontFamily="Arial, sans-serif" fontWeight="900" fontSize="26" letterSpacing="-0.5" fontStyle="italic">
-        FOOT LOCKER
-      </text>
-    </svg>
+    <LogoImage
+      src="/logos/foot-locker.png"
+      alt="Foot Locker"
+      className={className}
+    />
   );
 }
 
@@ -22,77 +46,51 @@ export function PacSunLogo({ className = "" }: { className?: string }) {
 
 export function ArkosHealthLogo({ className = "" }: { className?: string }) {
   return (
-    <svg className={className} viewBox="0 0 200 32" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-      <text x="0" y="24" fontFamily="Arial, sans-serif" fontWeight="600" fontSize="22" letterSpacing="1">
-        ARKOS HEALTH
-      </text>
-    </svg>
+    <LogoImage
+      src="/logos/arkos-health.png"
+      alt="Arkos Health"
+      className={className}
+    />
   );
 }
 
 export function DeepMindLogo({ className = "" }: { className?: string }) {
   return (
-    <svg className={className} viewBox="0 0 160 36" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-      {/* Stylized brain/network icon */}
-      <circle cx="14" cy="18" r="4" opacity="0.9" />
-      <circle cx="6" cy="10" r="2.5" opacity="0.6" />
-      <circle cx="22" cy="10" r="2.5" opacity="0.6" />
-      <circle cx="6" cy="26" r="2.5" opacity="0.6" />
-      <circle cx="22" cy="26" r="2.5" opacity="0.6" />
-      <line x1="14" y1="18" x2="6" y2="10" stroke="currentColor" strokeWidth="1.2" opacity="0.4" />
-      <line x1="14" y1="18" x2="22" y2="10" stroke="currentColor" strokeWidth="1.2" opacity="0.4" />
-      <line x1="14" y1="18" x2="6" y2="26" stroke="currentColor" strokeWidth="1.2" opacity="0.4" />
-      <line x1="14" y1="18" x2="22" y2="26" stroke="currentColor" strokeWidth="1.2" opacity="0.4" />
-      <text x="32" y="24" fontFamily="Arial, sans-serif" fontWeight="400" fontSize="18" letterSpacing="0.5">
-        DeepMind
-      </text>
-    </svg>
+    <LogoImage
+      src="/logos/google-deepmind.png"
+      alt="Google DeepMind"
+      className={className}
+    />
   );
 }
 
 export function StanfordLogo({ className = "" }: { className?: string }) {
   return (
-    <svg className={className} viewBox="0 0 140 36" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-      {/* Stylized S-tree icon */}
-      <rect x="10" y="26" width="8" height="3" rx="1" opacity="0.7" />
-      <rect x="12" y="12" width="4" height="16" rx="1" opacity="0.5" />
-      <circle cx="14" cy="9" r="6" opacity="0.8" />
-      <circle cx="14" cy="9" r="3" fill="#050505" />
-      <text x="30" y="24" fontFamily="'Georgia', serif" fontWeight="400" fontSize="18" letterSpacing="0.5">
-        Stanford
-      </text>
-    </svg>
+    <LogoImage
+      src="/logos/stanford.png"
+      alt="Stanford University"
+      className={className}
+    />
   );
 }
 
 export function MITLogo({ className = "" }: { className?: string }) {
   return (
-    <svg className={className} viewBox="0 0 80 36" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-      {/* MIT block letters */}
-      <rect x="2" y="8" width="6" height="22" />
-      <rect x="2" y="2" width="6" height="4" />
-      <rect x="12" y="2" width="6" height="28" />
-      <rect x="22" y="2" width="6" height="28" />
-      <rect x="30" y="2" width="14" height="6" />
-      <rect x="34" y="2" width="6" height="28" />
-      <rect x="48" y="8" width="6" height="22" />
-      <rect x="56" y="2" width="22" height="6" />
-      <rect x="62" y="2" width="6" height="28" />
-    </svg>
+    <LogoImage
+      src="/logos/mit.png"
+      alt="Massachusetts Institute of Technology"
+      className={className}
+    />
   );
 }
 
 export function NYULogo({ className = "" }: { className?: string }) {
   return (
-    <svg className={className} viewBox="0 0 80 36" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-      {/* Torch icon */}
-      <rect x="2" y="14" width="3" height="16" rx="1" opacity="0.7" />
-      <ellipse cx="3.5" cy="11" rx="3" ry="4" opacity="0.9" />
-      <ellipse cx="3.5" cy="9" rx="1.5" ry="2.5" fill="#050505" />
-      <text x="12" y="25" fontFamily="Arial, sans-serif" fontWeight="700" fontSize="22" letterSpacing="2">
-        NYU
-      </text>
-    </svg>
+    <LogoImage
+      src="/logos/nyu.png"
+      alt="New York University"
+      className={className}
+    />
   );
 }
 
