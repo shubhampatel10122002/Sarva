@@ -1,22 +1,45 @@
 import type { Metadata } from "next";
+import { Plus_Jakarta_Sans, Inter, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 
+const plusJakarta = Plus_Jakarta_Sans({
+  subsets: ["latin"],
+  variable: "--font-heading",
+  weight: ["500", "600", "700", "800"],
+  display: "swap",
+});
+
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-body",
+  weight: ["400", "500", "600"],
+  display: "swap",
+});
+
+const jetbrainsMono = JetBrains_Mono({
+  subsets: ["latin"],
+  variable: "--font-mono",
+  weight: ["400", "700"],
+  display: "swap",
+});
+
 export const metadata: Metadata = {
-  title: "SarvaHQ — AI-Powered Software for Enterprise",
+  title: "SarvaHQ — Generative Engine Optimization for E-Commerce",
   description:
-    "We build custom autonomous AI software and intelligent workflows tailored to your business. Team from Google DeepMind, Stanford, MIT. Backed by SilverTech Ventures.",
+    "We make LLMs find your products first. SarvaHQ optimizes your e-commerce content for ChatGPT, Perplexity, Google AI Overviews, and every generative search engine. Team from Google DeepMind, Stanford, MIT.",
   keywords: [
-    "AI agency",
-    "autonomous AI",
-    "custom software",
-    "enterprise AI",
-    "AI agents",
-    "AI workflows",
+    "generative engine optimization",
+    "GEO",
+    "LLM SEO",
+    "AI search optimization",
+    "e-commerce AI",
+    "generative search",
+    "AI visibility",
   ],
   openGraph: {
-    title: "SarvaHQ — AI-Powered Software for Enterprise",
+    title: "SarvaHQ — Generative Engine Optimization for E-Commerce",
     description:
-      "Custom autonomous AI software and intelligent workflows for businesses.",
+      "Make AI search find your products first. GEO for e-commerce brands.",
     url: "https://sarvahq.com",
     siteName: "SarvaHQ",
     type: "website",
@@ -29,8 +52,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className="font-sans antialiased">{children}</body>
+    <html lang="en" className={`${plusJakarta.variable} ${inter.variable} ${jetbrainsMono.variable}`}>
+      <body className="font-body antialiased">{children}</body>
     </html>
   );
 }

@@ -3,42 +3,39 @@
 import { useState } from "react";
 
 const navLinks = [
+  { label: "Technology", href: "#technology" },
   { label: "Services", href: "#services" },
-  { label: "Process", href: "#how-it-works" },
   { label: "Team", href: "#team" },
-  { label: "Contact", href: "#contact" },
 ];
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 border-b border-white/5 bg-primary/70 backdrop-blur-2xl">
+    <nav className="fixed top-0 left-0 right-0 z-50 border-b border-white/5 bg-primary/80 backdrop-blur-2xl">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
-        <a href="#" className="text-xl font-bold tracking-tight text-secondary">
+        <a href="#" className="font-heading text-xl font-bold tracking-tight text-secondary">
           sarva<span className="text-accent">hq</span>
         </a>
 
-        {/* Desktop */}
         <div className="hidden items-center gap-8 md:flex">
           {navLinks.map((link) => (
             <a
               key={link.href}
               href={link.href}
-              className="text-[13px] text-muted transition-colors hover:text-secondary"
+              className="text-[13px] text-muted transition-colors hover:text-accent"
             >
               {link.label}
             </a>
           ))}
           <a
             href="#contact"
-            className="rounded-lg bg-accent px-5 py-2 text-[13px] font-medium text-white transition-all hover:bg-accent-light"
+            className="rounded-lg bg-accent px-5 py-2 text-[13px] font-medium text-primary transition-all hover:bg-accent-light"
           >
-            Get in Touch
+            Get Your GEO Audit
           </a>
         </div>
 
-        {/* Mobile toggle */}
         <button
           className="text-secondary md:hidden"
           onClick={() => setMenuOpen(!menuOpen)}
@@ -54,7 +51,6 @@ export default function Navbar() {
         </button>
       </div>
 
-      {/* Mobile menu */}
       {menuOpen && (
         <div className="border-t border-white/5 bg-primary/95 px-6 py-6 backdrop-blur-2xl md:hidden">
           {navLinks.map((link) => (
@@ -62,7 +58,7 @@ export default function Navbar() {
               key={link.href}
               href={link.href}
               onClick={() => setMenuOpen(false)}
-              className="block py-3 text-sm text-muted-light transition-colors hover:text-secondary"
+              className="block py-3 text-sm text-muted-light transition-colors hover:text-accent"
             >
               {link.label}
             </a>
@@ -70,9 +66,9 @@ export default function Navbar() {
           <a
             href="#contact"
             onClick={() => setMenuOpen(false)}
-            className="mt-4 inline-block rounded-lg bg-accent px-5 py-2.5 text-sm font-medium text-white"
+            className="mt-4 inline-block rounded-lg bg-accent px-5 py-2.5 text-sm font-medium text-primary"
           >
-            Get in Touch
+            Get Your GEO Audit
           </a>
         </div>
       )}

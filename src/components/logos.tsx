@@ -94,19 +94,12 @@ export function NYULogo({ className = "" }: { className?: string }) {
   );
 }
 
-export function SilverTechLogo({ className = "" }: { className?: string }) {
+export function AntlerLogo({ className = "" }: { className?: string }) {
   return (
-    <svg className={className} viewBox="0 0 220 36" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-      {/* Diamond/venture icon */}
-      <polygon points="14,4 24,18 14,32 4,18" opacity="0.8" />
-      <polygon points="14,8 20,18 14,28 8,18" fill="#050505" />
-      <polygon points="14,12 16,18 14,24 12,18" opacity="0.6" />
-      <text x="32" y="25" fontFamily="Arial, sans-serif" fontWeight="300" fontSize="19" letterSpacing="2">
-        SILVERTECH
-      </text>
-      <text x="172" y="25" fontFamily="Arial, sans-serif" fontWeight="300" fontSize="19" letterSpacing="2" opacity="0.5">
-        VC
-      </text>
-    </svg>
+    <LogoImage
+      src="/logos/antler.jpeg"
+      alt="Antler"
+      className={className}
+    />
   );
 }
