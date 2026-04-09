@@ -65,9 +65,9 @@ export default function Home() {
             className="animate-fade-in-up mx-auto mt-8 max-w-2xl text-lg leading-relaxed text-muted sm:text-xl"
             style={{ animationDelay: "0.15s" }}
           >
-            Generative Engine Optimization for brands. We restructure your
-            content so ChatGPT, Perplexity, and Gemini cite, recommend, and
-            surface your brand at the top of every answer.
+            Generative Engine Optimization for brands. We restructure and 
+            optimize your content so LLMs like ChatGPT recommend, and
+            surface your brand/products at the top of every answer.
           </p>
 
           <div
