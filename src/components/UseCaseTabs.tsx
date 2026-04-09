@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-
+type SVGType = "critic" | "dashboard" | "search" | "brand" | "content";
 const TABS = [
   {
     id: "critic",
@@ -113,7 +113,7 @@ const TABS = [
   // },
 ];
 
-function TabSVG({ type }: { type: (typeof TABS)[number]["svgType"] }) {
+function TabSVG({ type }: { type: SVGType }) {
   const commonBg = "#F0F4FF";
   const bar = "#3B82F6";
   const barLight = "#93C5FD";
