@@ -206,26 +206,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ═══════════════════════════════════════════
-          BACKED BY
-      ═══════════════════════════════════════════ */}
-      <section id="backed-by" className="relative overflow-hidden px-6 py-20 lg:py-28">
-        <div className="glow-orb glow-orb-blue absolute left-1/2 top-1/2 h-[400px] w-[400px] -translate-x-1/2 -translate-y-1/2 opacity-10" />
-
-        <div className="relative z-10 mx-auto max-w-4xl">
-          <div className="rounded-3xl border border-border bg-surface p-12 text-center md:p-16">
-            <span className="text-xs font-medium uppercase tracking-[0.2em] text-accent">
-              Backed by
-            </span>
-            <div className="mx-auto mt-8 flex justify-center">
-              <AntlerLogo className="h-10 w-auto text-secondary" />
-            </div>
-            <p className="mt-6 text-sm text-muted">
-              New York City
-            </p>
-          </div>
-        </div>
-      </section>
+    
 
       {/* ═══════════════════════════════════════════
           CTA / CONTACT
