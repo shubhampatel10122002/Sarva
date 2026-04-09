@@ -40,6 +40,19 @@ export default function DeployFlow() {
   const [tick, setTick] = useState(0);
 
   useEffect(() => {
+    const prefersReducedMotion =
+      typeof window !== "undefined" &&
+      window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    if (prefersReducedMotion) {
+      // Single static pulse parked between deploy and monitor
+      pulsesRef.current = [
+        { id: 1, start: performance.now() - CYCLE_MS * 0.6 },
+      ];
+      setTick(1);
+      return;
+    }
+
     let raf: number;
     let lastSpawn = performance.now() - SPAWN_MS;
 

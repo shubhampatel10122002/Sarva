@@ -106,12 +106,16 @@ export default function MethodologyPage() {
         {/* ─── STEP 03 — MEASUREMENT ─── */}
         <section className="relative px-6 py-24 lg:py-32">
           <div className="mx-auto grid max-w-6xl items-center gap-12 lg:grid-cols-2">
-            <AgentSwarm />
-            <StepHeader
-              index="03"
-              title="Real-World AI Visibility Measurement"
-              caption="Thousands of parallel agents interact directly with live AI interfaces — not APIs — replicating real user behavior. We measure brand mentions, ranking, and response structure across ChatGPT, Perplexity, and Gemini."
-            />
+            <div className="lg:order-2">
+              <AgentSwarm />
+            </div>
+            <div className="lg:order-1">
+              <StepHeader
+                index="03"
+                title="Real-World AI Visibility Measurement"
+                caption="Thousands of parallel agents interact directly with live AI interfaces — not APIs — replicating real user behavior. We measure brand mentions, ranking, and response structure across ChatGPT, Perplexity, and Gemini."
+              />
+            </div>
           </div>
         </section>
 

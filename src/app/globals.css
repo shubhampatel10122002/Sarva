@@ -411,3 +411,19 @@ body {
   animation: loop-orbit 18s linear infinite;
   transform-origin: center;
 }
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-stream-up,
+  .animate-loop-orbit,
+  .animate-fade-in-up,
+  .animate-fade-in,
+  .animate-pulse-glow,
+  .animate-scale-in,
+  .animate-marquee,
+  .animate-float,
+  .animate-bar-rise,
+  .animate-gauge-fill,
+  .animate-heartbeat-line {
+    animation: none !important;
+  }
+}

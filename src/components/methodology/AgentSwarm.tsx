@@ -33,6 +33,22 @@ export default function AgentSwarm() {
   const [count, setCount] = useState(1247);
 
   useEffect(() => {
+    const prefersReducedMotion =
+      typeof window !== "undefined" &&
+      window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    if (prefersReducedMotion) {
+      // Render a single static frame with one pulse per lane
+      const base = performance.now();
+      pulsesRef.current = DESTINATIONS.map((_, i) => ({
+        id: i + 1,
+        lane: i,
+        start: base - CYCLE_MS * 0.5,
+      }));
+      setTick(1);
+      return;
+    }
+
     let raf: number;
     let lastSpawn = performance.now();
 

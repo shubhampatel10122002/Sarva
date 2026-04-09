@@ -85,6 +85,11 @@ export default function OptimizationLoop() {
 
   // Auto-advance
   useEffect(() => {
+    const prefersReducedMotion =
+      typeof window !== "undefined" &&
+      window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (prefersReducedMotion) return;
+
     const id = setInterval(() => {
       const idleFor = performance.now() - lastInteractRef.current;
       if (locked === null && idleFor > IDLE_RESUME_MS) {
@@ -99,6 +104,11 @@ export default function OptimizationLoop() {
 
   // Orbit particle RAF — directly mutates the group's transform to avoid re-renders
   useEffect(() => {
+    const prefersReducedMotion =
+      typeof window !== "undefined" &&
+      window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (prefersReducedMotion) return;
+
     let raf: number;
     const loop = () => {
       orbitAngleRef.current = (orbitAngleRef.current + 0.006) % (Math.PI * 2);

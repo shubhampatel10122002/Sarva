@@ -27,6 +27,10 @@ export default function SystemMap() {
   const [focus, setFocus] = useState(0);
 
   useEffect(() => {
+    const prefersReducedMotion =
+      typeof window !== "undefined" &&
+      window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (prefersReducedMotion) return;
     const id = setInterval(() => {
       setFocus((f) => (f + 1) % NODES.length);
     }, 2500);
