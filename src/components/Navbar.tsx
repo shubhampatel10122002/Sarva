@@ -1,20 +1,25 @@
 "use client";
 
 import { useState } from "react";
+import { usePathname } from "next/navigation";
 
 const navLinks = [
-  { label: "Technology", href: "#technology" },
-  { label: "Services", href: "#services" },
-  { label: "Team", href: "#team" },
+  { label: "Methodology", href: "/methodology" },
+  { label: "Team", href: "/#team" },
+  { label: "Contact", href: "/#contact" },
 ];
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const pathname = usePathname();
+
+  const isActive = (href: string) =>
+    href.startsWith("/#") ? false : pathname === href;
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 border-b border-white/5 bg-primary/80 backdrop-blur-2xl">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
-        <a href="#" className="font-heading text-xl font-bold tracking-tight text-secondary">
+        <a href="/" className="font-heading text-xl font-bold tracking-tight text-secondary">
           sarva<span className="text-accent">hq</span>
         </a>
 
@@ -23,13 +28,15 @@ export default function Navbar() {
             <a
               key={link.href}
               href={link.href}
-              className="text-[13px] text-muted transition-colors hover:text-accent"
+              className={`text-[13px] transition-colors hover:text-accent ${
+                isActive(link.href) ? "text-accent" : "text-muted"
+              }`}
             >
               {link.label}
             </a>
           ))}
           <a
-            href="#contact"
+            href="/#contact"
             className="rounded-lg bg-accent px-5 py-2 text-[13px] font-medium text-primary transition-all hover:bg-accent-light"
           >
             Get Your GEO Audit
@@ -58,13 +65,15 @@ export default function Navbar() {
               key={link.href}
               href={link.href}
               onClick={() => setMenuOpen(false)}
-              className="block py-3 text-sm text-muted-light transition-colors hover:text-accent"
+              className={`block py-3 text-sm transition-colors hover:text-accent ${
+                isActive(link.href) ? "text-accent" : "text-muted-light"
+              }`}
             >
               {link.label}
             </a>
           ))}
           <a
-            href="#contact"
+            href="/#contact"
             onClick={() => setMenuOpen(false)}
             className="mt-4 inline-block rounded-lg bg-accent px-5 py-2.5 text-sm font-medium text-primary"
           >

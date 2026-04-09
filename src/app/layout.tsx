@@ -35,6 +35,11 @@ export const metadata: Metadata = {
     "e-commerce AI",
     "generative search",
     "AI visibility",
+    "methodology",
+    "query clustering",
+    "AI visibility measurement",
+    "domain-specific critic model",
+    "continuous learning LLM SEO",
   ],
   openGraph: {
     title: "SarvaHQ — Generative Engine Optimization for E-Commerce",
