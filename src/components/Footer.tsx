@@ -19,14 +19,14 @@ export default function Footer() {
                 Navigate
               </span>
               <div className="mt-4 flex flex-col gap-3">
-                <a href="#technology" className="text-sm text-muted-light transition-colors hover:text-accent">
-                  Technology
+                <a href="/methodology" className="text-sm text-muted-light transition-colors hover:text-accent">
+                  Methodology
                 </a>
-                <a href="#services" className="text-sm text-muted-light transition-colors hover:text-accent">
-                  Services
-                </a>
-                <a href="#team" className="text-sm text-muted-light transition-colors hover:text-accent">
+                <a href="/#team" className="text-sm text-muted-light transition-colors hover:text-accent">
                   Team
+                </a>
+                <a href="/#contact" className="text-sm text-muted-light transition-colors hover:text-accent">
+                  Contact
                 </a>
               </div>
             </div>

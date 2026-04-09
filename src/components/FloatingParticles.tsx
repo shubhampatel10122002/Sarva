@@ -26,11 +26,11 @@ interface Mote {
 const SHAPES: ShapeKind[] = ["ring", "hexagon", "diamond", "cross", "dot", "arc"];
 
 const COLORS = [
-  "245, 158, 11",
+  "59, 130, 246",
   "6, 182, 212",
   "16, 185, 129",
   "241, 245, 249",
-  "251, 191, 36",
+  "96, 165, 250",
 ];
 
 function drawShape(ctx: CanvasRenderingContext2D, m: Mote, currentOpacity: number) {
@@ -223,7 +223,7 @@ export default function FloatingParticles() {
             ctx.beginPath();
             ctx.moveTo(motes[i].x, motes[i].y);
             ctx.lineTo(motes[j].x, motes[j].y);
-            ctx.strokeStyle = `rgba(245, 158, 11, ${lineAlpha})`;
+            ctx.strokeStyle = `rgba(59, 130, 246, ${lineAlpha})`;
             ctx.lineWidth = 0.5;
             ctx.stroke();
           }

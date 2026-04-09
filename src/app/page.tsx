@@ -1,8 +1,6 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import QuerySphereWrapper from "@/components/QuerySphereWrapper";
 import FloatingParticlesWrapper from "@/components/FloatingParticlesWrapper";
-import MethodologyPipelineWrapper from "@/components/MethodologyPipelineWrapper";
 import {
   FootLockerLogo,
   PacSunLogo,
@@ -26,7 +24,7 @@ export default function Home() {
       <section className="noise-overlay grid-bg relative flex min-h-screen items-center justify-center overflow-hidden px-6 pt-20">
         {/* Moving gradient mesh */}
         <div className="gradient-mesh absolute inset-0" />
-        <div className="glow-orb glow-orb-amber absolute left-1/2 top-1/3 h-[600px] w-[600px] -translate-x-1/2 -translate-y-1/2 animate-float" />
+        <div className="glow-orb glow-orb-blue absolute left-1/2 top-1/3 h-[600px] w-[600px] -translate-x-1/2 -translate-y-1/2 animate-float" />
         <div className="glow-orb glow-orb-teal absolute bottom-1/4 right-1/4 h-[300px] w-[300px] opacity-30 animate-float" style={{ animationDelay: "-3s" }} />
 
         {/* Orbiting ring */}
@@ -73,10 +71,10 @@ export default function Home() {
               </svg>
             </a>
             <a
-              href="#technology"
+              href="/methodology"
               className="rounded-xl border border-border-light px-8 py-4 text-sm font-semibold text-secondary transition-all hover:border-accent/30 hover:bg-surface-light"
             >
-              See Our Technology
+              See Our Methodology
             </a>
           </div>
         </div>
@@ -175,218 +173,6 @@ export default function Home() {
       <div className="section-divider mx-auto max-w-4xl" />
 
       {/* ═══════════════════════════════════════════
-          TECHNOLOGY — Visualization + Animated Pipeline
-      ═══════════════════════════════════════════ */}
-      <section id="technology" className="relative overflow-hidden py-28 lg:py-44" style={{ background: "linear-gradient(180deg, #0B1120 0%, #070D19 50%, #0B1120 100%)" }}>
-        <div className="glow-orb glow-orb-amber absolute left-1/2 top-1/4 h-[700px] w-[700px] -translate-x-1/2 -translate-y-1/2 opacity-15 animate-float" />
-        <div className="glow-orb glow-orb-teal absolute right-0 bottom-0 h-[400px] w-[400px] opacity-10 animate-float" style={{ animationDelay: "-2s" }} />
-
-        <div className="relative z-10 mx-auto max-w-6xl px-6">
-          {/* Section header */}
-          <div className="text-center">
-            <span className="text-xs font-medium uppercase tracking-[0.2em] text-accent">
-              Our technology
-            </span>
-            <h2 className="mt-4 font-heading text-4xl font-bold leading-tight text-secondary sm:text-5xl lg:text-6xl">
-              Mapping the query
-              <br />
-              <span className="gradient-text-subtle">space of LLMs.</span>
-            </h2>
-          </div>
-
-          {/* 3D Visualization */}
-          <div className="mx-auto mt-12 max-w-xl">
-            <QuerySphereWrapper />
-          </div>
-
-          {/* Diagram legend */}
-          <div className="mx-auto mt-6 flex max-w-xl flex-wrap justify-center gap-6">
-            {[
-              { color: "bg-muted-light", label: "User queries" },
-              { color: "bg-accent", label: "Cluster centroids" },
-              { color: "bg-green", label: "Optimization vector" },
-            ].map((item) => (
-              <div key={item.label} className="flex items-center gap-2">
-                <span className={`h-2.5 w-2.5 rounded-full ${item.color}`} />
-                <span className="text-xs text-muted">{item.label}</span>
-              </div>
-            ))}
-          </div>
-
-          {/* ─── Animated Methodology Pipeline ─── */}
-          <div className="mt-24">
-            <h3 className="text-center font-heading text-2xl font-bold text-secondary sm:text-3xl">
-              How our agents work
-            </h3>
-            <p className="mx-auto mt-3 max-w-md text-center text-sm text-muted">
-              Six autonomous agents. One continuous loop. Built for your brand.
-            </p>
-
-            <div className="mt-12">
-              <MethodologyPipelineWrapper />
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ═══════════════════════════════════════════
-          SERVICES — Visual cards with animated micro-illustrations
-      ═══════════════════════════════════════════ */}
-      <section id="services" className="relative px-6 py-28 lg:py-36">
-        <div className="mx-auto max-w-7xl">
-          <div className="mb-16 max-w-2xl">
-            <span className="text-xs font-medium uppercase tracking-[0.2em] text-accent">
-              What we deploy
-            </span>
-            <h2 className="mt-4 font-heading text-4xl font-bold leading-tight text-secondary sm:text-5xl">
-              Domain-specific AI agents
-              <br />
-              <span className="gradient-text-subtle">for your brand.</span>
-            </h2>
-          </div>
-
-          <div className="grid gap-6 md:grid-cols-2">
-            {/* Card 1: Discovery Agent with animated bar chart */}
-            <div className="bento-card rounded-2xl border border-border bg-surface p-8">
-              <div className="flex items-start justify-between">
-                <div className="inline-flex rounded-lg border border-teal/20 bg-teal/5 p-3">
-                  <svg className="h-6 w-6 text-teal" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
-                  </svg>
-                </div>
-                {/* Mini animated bar chart */}
-                <div className="flex items-end gap-1">
-                  {[40, 65, 50, 80, 55, 90, 70].map((h, i) => (
-                    <div
-                      key={i}
-                      className="w-2 rounded-t bg-teal/30 animate-bar-rise"
-                      style={{
-                        height: `${h * 0.4}px`,
-                        animationDelay: `${i * 0.15}s`,
-                      }}
-                    />
-                  ))}
-                </div>
-              </div>
-              <h3 className="mt-5 font-heading text-lg font-semibold text-secondary">AI Discovery Agent</h3>
-              <p className="mt-2 text-sm text-muted-light leading-relaxed">
-                Monitors trends across Google, Reddit, and Quora in your domain. Generates 50K+ conversational queries.
-              </p>
-              <div className="mt-5 flex flex-wrap gap-2">
-                {["Google Trends", "Reddit", "Quora", "50K+ Queries"].map((tag) => (
-                  <span key={tag} className="rounded-full border border-border-light bg-surface-elevated px-3 py-1 text-[10px] text-muted">
-                    {tag}
-                  </span>
-                ))}
-              </div>
-            </div>
-
-            {/* Card 2: Critic Agent with radial gauge */}
-            <div className="bento-card rounded-2xl border border-border bg-surface p-8">
-              <div className="flex items-start justify-between">
-                <div className="inline-flex rounded-lg border border-accent/20 bg-accent/5 p-3">
-                  <svg className="h-6 w-6 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09z" />
-                  </svg>
-                </div>
-                {/* Radial gauge */}
-                <svg className="h-14 w-14" viewBox="0 0 60 60">
-                  <circle cx="30" cy="30" r="24" fill="none" stroke="#1E293B" strokeWidth="4" />
-                  <circle
-                    cx="30" cy="30" r="24" fill="none"
-                    stroke="url(#gaugeGrad)" strokeWidth="4"
-                    strokeDasharray="150.8" strokeDashoffset="45"
-                    strokeLinecap="round"
-                    className="animate-gauge-fill"
-                    transform="rotate(-90 30 30)"
-                  />
-                  <defs>
-                    <linearGradient id="gaugeGrad" x1="0" y1="0" x2="1" y2="1">
-                      <stop offset="0%" stopColor="#F59E0B" />
-                      <stop offset="100%" stopColor="#FBBF24" />
-                    </linearGradient>
-                  </defs>
-                  <text x="30" y="33" textAnchor="middle" className="fill-accent text-[11px] font-bold">87%</text>
-                </svg>
-              </div>
-              <h3 className="mt-5 font-heading text-lg font-semibold text-secondary">Domain Critic Agent</h3>
-              <p className="mt-2 text-sm text-muted-light leading-relaxed">
-                Fine-tuned exclusively for your brand. Learns from millions of real AI interactions in your vertical.
-              </p>
-              <div className="mt-5 flex flex-wrap gap-2">
-                {["Brand-Tuned", "Pattern Learning", "Visibility Scoring"].map((tag) => (
-                  <span key={tag} className="rounded-full border border-border-light bg-surface-elevated px-3 py-1 text-[10px] text-muted">
-                    {tag}
-                  </span>
-                ))}
-              </div>
-            </div>
-
-            {/* Card 3: Content Optimization with code-like animation */}
-            <div className="bento-card rounded-2xl border border-border bg-surface p-8">
-              <div className="flex items-start justify-between">
-                <div className="inline-flex rounded-lg border border-green/20 bg-green/5 p-3">
-                  <svg className="h-6 w-6 text-green" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17.25 6.75L22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3l-4.5 16.5" />
-                  </svg>
-                </div>
-                {/* Mini diff visualization */}
-                <div className="rounded-lg border border-border-light bg-surface-elevated p-2 font-mono text-[9px]">
-                  <div className="text-red-400/60 line-through">- generic description...</div>
-                  <div className="text-green/80">+ optimized for LLMs</div>
-                </div>
-              </div>
-              <h3 className="mt-5 font-heading text-lg font-semibold text-secondary">Content Optimization Agent</h3>
-              <p className="mt-2 text-sm text-muted-light leading-relaxed">
-                Rewrites product pages using critic-guided strategies. Sandbox-tested, client-approved.
-              </p>
-              <div className="mt-5 flex flex-wrap gap-2">
-                {["Auto-Rewrite", "Sandbox QA", "Client Approval"].map((tag) => (
-                  <span key={tag} className="rounded-full border border-border-light bg-surface-elevated px-3 py-1 text-[10px] text-muted">
-                    {tag}
-                  </span>
-                ))}
-              </div>
-            </div>
-
-            {/* Card 4: Continuous Monitoring with live pulse */}
-            <div className="bento-card rounded-2xl border border-border bg-surface p-8">
-              <div className="flex items-start justify-between">
-                <div className="inline-flex rounded-lg border border-teal/20 bg-teal/5 p-3">
-                  <svg className="h-6 w-6 text-teal" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0l3.181 3.183a8.25 8.25 0 0013.803-3.7M4.031 9.865a8.25 8.25 0 0113.803-3.7l3.181 3.182" />
-                  </svg>
-                </div>
-                {/* Live heartbeat line */}
-                <svg className="h-10 w-24" viewBox="0 0 100 40" fill="none">
-                  <path
-                    d="M0 20 L15 20 L20 8 L25 32 L30 15 L35 25 L40 20 L55 20 L60 8 L65 32 L70 15 L75 25 L80 20 L100 20"
-                    stroke="rgba(6, 182, 212, 0.5)"
-                    strokeWidth="1.5"
-                    fill="none"
-                    className="animate-heartbeat-line"
-                  />
-                </svg>
-              </div>
-              <h3 className="mt-5 font-heading text-lg font-semibold text-secondary">Continuous Monitoring Agent</h3>
-              <p className="mt-2 text-sm text-muted-light leading-relaxed">
-                Daily visibility scans across ChatGPT, Perplexity, Gemini. RL-powered adaptation.
-              </p>
-              <div className="mt-5 flex flex-wrap gap-2">
-                {["Daily Scans", "Reinforcement Learning", "Multi-Engine"].map((tag) => (
-                  <span key={tag} className="rounded-full border border-border-light bg-surface-elevated px-3 py-1 text-[10px] text-muted">
-                    {tag}
-                  </span>
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <div className="section-divider mx-auto max-w-4xl" />
-
-      {/* ═══════════════════════════════════════════
           TEAM
       ═══════════════════════════════════════════ */}
       <section id="team" className="relative px-6 py-28 lg:py-36">
@@ -424,7 +210,7 @@ export default function Home() {
           BACKED BY
       ═══════════════════════════════════════════ */}
       <section id="backed-by" className="relative overflow-hidden px-6 py-20 lg:py-28">
-        <div className="glow-orb glow-orb-amber absolute left-1/2 top-1/2 h-[400px] w-[400px] -translate-x-1/2 -translate-y-1/2 opacity-10" />
+        <div className="glow-orb glow-orb-blue absolute left-1/2 top-1/2 h-[400px] w-[400px] -translate-x-1/2 -translate-y-1/2 opacity-10" />
 
         <div className="relative z-10 mx-auto max-w-4xl">
           <div className="rounded-3xl border border-border bg-surface p-12 text-center md:p-16">
@@ -445,7 +231,7 @@ export default function Home() {
           CTA / CONTACT
       ═══════════════════════════════════════════ */}
       <section id="contact" className="relative overflow-hidden px-6 py-28 lg:py-36">
-        <div className="glow-orb glow-orb-amber absolute left-1/4 bottom-0 h-[400px] w-[400px] opacity-15 animate-float" />
+        <div className="glow-orb glow-orb-blue absolute left-1/4 bottom-0 h-[400px] w-[400px] opacity-15 animate-float" />
         <div className="glow-orb glow-orb-teal absolute right-1/4 top-0 h-[300px] w-[300px] opacity-10 animate-float" style={{ animationDelay: "-4s" }} />
 
         <div className="relative z-10 mx-auto max-w-4xl text-center">
