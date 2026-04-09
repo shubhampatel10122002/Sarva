@@ -26,7 +26,7 @@ export default function Home() {
       <section className="noise-overlay grid-bg relative flex min-h-screen items-center justify-center overflow-hidden px-6 pt-20">
         {/* Moving gradient mesh */}
         <div className="gradient-mesh absolute inset-0" />
-        <div className="glow-orb glow-orb-amber absolute left-1/2 top-1/3 h-[600px] w-[600px] -translate-x-1/2 -translate-y-1/2 animate-float" />
+        <div className="glow-orb glow-orb-blue absolute left-1/2 top-1/3 h-[600px] w-[600px] -translate-x-1/2 -translate-y-1/2 animate-float" />
         <div className="glow-orb glow-orb-teal absolute bottom-1/4 right-1/4 h-[300px] w-[300px] opacity-30 animate-float" style={{ animationDelay: "-3s" }} />
 
         {/* Orbiting ring */}
@@ -178,7 +178,7 @@ export default function Home() {
           TECHNOLOGY — Visualization + Animated Pipeline
       ═══════════════════════════════════════════ */}
       <section id="technology" className="relative overflow-hidden py-28 lg:py-44" style={{ background: "linear-gradient(180deg, #0B1120 0%, #070D19 50%, #0B1120 100%)" }}>
-        <div className="glow-orb glow-orb-amber absolute left-1/2 top-1/4 h-[700px] w-[700px] -translate-x-1/2 -translate-y-1/2 opacity-15 animate-float" />
+        <div className="glow-orb glow-orb-blue absolute left-1/2 top-1/4 h-[700px] w-[700px] -translate-x-1/2 -translate-y-1/2 opacity-15 animate-float" />
         <div className="glow-orb glow-orb-teal absolute right-0 bottom-0 h-[400px] w-[400px] opacity-10 animate-float" style={{ animationDelay: "-2s" }} />
 
         <div className="relative z-10 mx-auto max-w-6xl px-6">
@@ -424,7 +424,7 @@ export default function Home() {
           BACKED BY
       ═══════════════════════════════════════════ */}
       <section id="backed-by" className="relative overflow-hidden px-6 py-20 lg:py-28">
-        <div className="glow-orb glow-orb-amber absolute left-1/2 top-1/2 h-[400px] w-[400px] -translate-x-1/2 -translate-y-1/2 opacity-10" />
+        <div className="glow-orb glow-orb-blue absolute left-1/2 top-1/2 h-[400px] w-[400px] -translate-x-1/2 -translate-y-1/2 opacity-10" />
 
         <div className="relative z-10 mx-auto max-w-4xl">
           <div className="rounded-3xl border border-border bg-surface p-12 text-center md:p-16">
@@ -445,7 +445,7 @@ export default function Home() {
           CTA / CONTACT
       ═══════════════════════════════════════════ */}
       <section id="contact" className="relative overflow-hidden px-6 py-28 lg:py-36">
-        <div className="glow-orb glow-orb-amber absolute left-1/4 bottom-0 h-[400px] w-[400px] opacity-15 animate-float" />
+        <div className="glow-orb glow-orb-blue absolute left-1/4 bottom-0 h-[400px] w-[400px] opacity-15 animate-float" />
         <div className="glow-orb glow-orb-teal absolute right-1/4 top-0 h-[300px] w-[300px] opacity-10 animate-float" style={{ animationDelay: "-4s" }} />
 
         <div className="relative z-10 mx-auto max-w-4xl text-center">
