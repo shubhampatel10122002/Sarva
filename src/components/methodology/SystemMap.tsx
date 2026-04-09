@@ -121,8 +121,8 @@ export default function SystemMap() {
                 cx={n.x}
                 cy={RAIL_Y}
                 r={active ? 9 : 6}
-                fill={active ? "#3B82F6" : "#1E293B"}
-                stroke={active ? "#60A5FA" : "#334155"}
+                fill={active ? "#3B82F6" : "#E2E8F0"}
+                stroke={active ? "#60A5FA" : "#CBD5E1"}
                 strokeWidth="1.5"
                 filter={active ? "url(#node-glow)" : undefined}
                 style={{ transition: "r 0.4s ease" }}
@@ -133,7 +133,7 @@ export default function SystemMap() {
                 textAnchor="middle"
                 fontSize="11"
                 className="font-heading"
-                fill={active ? "#F1F5F9" : "#64748B"}
+                fill={active ? "#0F172A" : "#64748B"}
                 style={{ transition: "fill 0.4s ease" }}
               >
                 {n.label}
@@ -144,7 +144,7 @@ export default function SystemMap() {
                 textAnchor="middle"
                 fontSize="9"
                 className="font-mono"
-                fill={active ? "#60A5FA" : "#334155"}
+                fill={active ? "#60A5FA" : "#CBD5E1"}
                 letterSpacing="1.5"
                 style={{ transition: "fill 0.4s ease" }}
               >

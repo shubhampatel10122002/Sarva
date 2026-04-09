@@ -1,6 +1,15 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import FloatingParticlesWrapper from "@/components/FloatingParticlesWrapper";
+import UseCaseTabs from "@/components/UseCaseTabs";
+import StepHeader from "@/components/methodology/StepHeader";
+import MethodologySpine from "@/components/methodology/MethodologySpine";
+import SystemMap from "@/components/methodology/SystemMap";
+import QueryStream from "@/components/methodology/QueryStream";
+import ClusterFormation from "@/components/methodology/ClusterFormation";
+import AgentSwarm from "@/components/methodology/AgentSwarm";
+import CriticEvolution from "@/components/methodology/CriticEvolution";
+import OptimizationLoop from "@/components/methodology/OptimizationLoop";
+import DeployFlow from "@/components/methodology/DeployFlow";
 import {
   FootLockerLogo,
   PacSunLogo,
@@ -15,41 +24,50 @@ import {
 export default function Home() {
   return (
     <>
-      <FloatingParticlesWrapper />
       <Navbar />
 
       {/* ═══════════════════════════════════════════
-          HERO — Centered text with animated mesh
+          HERO — Gradient background with visual elements
       ═══════════════════════════════════════════ */}
-      <section className="noise-overlay grid-bg relative flex min-h-screen items-center justify-center overflow-hidden px-6 pt-20">
-        {/* Moving gradient mesh */}
+      <section className="relative flex min-h-screen items-center justify-center overflow-hidden px-6 pt-20">
+        {/* Gradient background */}
+        <div className="absolute inset-0 bg-gradient-to-br from-blue-50 via-white to-indigo-50/60" />
+        <div className="absolute inset-0 bg-gradient-to-t from-white via-transparent to-transparent" />
+
+        {/* Subtle mesh overlay */}
         <div className="gradient-mesh absolute inset-0" />
-        <div className="glow-orb glow-orb-blue absolute left-1/2 top-1/3 h-[600px] w-[600px] -translate-x-1/2 -translate-y-1/2 animate-float" />
-        <div className="glow-orb glow-orb-teal absolute bottom-1/4 right-1/4 h-[300px] w-[300px] opacity-30 animate-float" style={{ animationDelay: "-3s" }} />
+
+        {/* Decorative orbs */}
+        <div className="glow-orb glow-orb-blue absolute left-1/4 top-1/4 h-[500px] w-[500px] animate-float" />
+        <div className="glow-orb glow-orb-teal absolute bottom-1/4 right-1/4 h-[300px] w-[300px] animate-float" style={{ animationDelay: "-3s" }} />
 
         {/* Orbiting ring */}
-        <div className="orbit-ring absolute left-1/2 top-1/2 h-[500px] w-[500px] -translate-x-1/2 -translate-y-1/2" />
+        <div className="orbit-ring absolute left-1/2 top-1/2 h-[500px] w-[500px] -translate-x-1/2 -translate-y-1/2 opacity-60" />
+
+        {/* Grid pattern */}
+        <div className="grid-bg absolute inset-0 opacity-40" />
 
         <div className="relative z-10 mx-auto max-w-4xl text-center">
-          <div className="animate-fade-in mb-8 inline-flex items-center gap-2 rounded-full border border-border-light bg-surface/60 px-5 py-2 backdrop-blur-sm">
+          <div className="animate-fade-in mb-8 inline-flex items-center gap-2 rounded-full border border-border bg-white/80 px-5 py-2 shadow-sm backdrop-blur-sm">
             <span className="h-2 w-2 rounded-full bg-accent animate-pulse-glow" />
-            <span className="text-xs font-medium tracking-wide text-muted-light">
+            <span className="text-xs font-medium tracking-wide text-muted">
               Backed by Antler &middot; New York City
             </span>
           </div>
 
-          <h1 className="animate-fade-in-up font-heading text-5xl font-extrabold leading-[1.08] tracking-tight sm:text-6xl md:text-7xl lg:text-8xl">
+          <h1 className="animate-fade-in-up font-heading text-5xl font-extrabold leading-[1.08] tracking-tight text-secondary sm:text-6xl md:text-7xl lg:text-8xl">
             Make AI search
             <br />
             <span className="gradient-text">find you first.</span>
           </h1>
 
           <p
-            className="animate-fade-in-up mx-auto mt-8 max-w-2xl text-lg leading-relaxed text-muted-light sm:text-xl"
+            className="animate-fade-in-up mx-auto mt-8 max-w-2xl text-lg leading-relaxed text-muted sm:text-xl"
             style={{ animationDelay: "0.15s" }}
           >
-            Generative Engine Optimization for e-commerce. We restructure your
-            product content so LLMs cite, recommend, and surface your brand.
+            Generative Engine Optimization for brands. We restructure your
+            content so ChatGPT, Perplexity, and Gemini cite, recommend, and
+            surface your brand at the top of every answer.
           </p>
 
           <div
@@ -58,7 +76,7 @@ export default function Home() {
           >
             <a
               href="#contact"
-              className="animate-pulse-glow group inline-flex items-center gap-2 rounded-xl bg-accent px-8 py-4 text-sm font-semibold text-primary transition-all hover:bg-accent-light"
+              className="animate-pulse-glow group inline-flex items-center gap-2 rounded-xl bg-accent px-8 py-4 text-sm font-semibold text-white transition-all hover:bg-accent-dim"
             >
               Optimize Your Visibility
               <svg
@@ -71,15 +89,15 @@ export default function Home() {
               </svg>
             </a>
             <a
-              href="/methodology"
-              className="rounded-xl border border-border-light px-8 py-4 text-sm font-semibold text-secondary transition-all hover:border-accent/30 hover:bg-surface-light"
+              href="#methodology"
+              className="rounded-xl border border-border px-8 py-4 text-sm font-semibold text-secondary transition-all hover:border-accent/30 hover:bg-surface"
             >
               See Our Methodology
             </a>
           </div>
         </div>
 
-        <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-primary to-transparent" />
+        <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-white to-transparent" />
       </section>
 
       {/* ═══════════════════════════════════════════
@@ -93,16 +111,16 @@ export default function Home() {
                 <span className="whitespace-nowrap text-[10px] font-bold uppercase tracking-[0.25em] text-accent/60">
                   Trusted by
                 </span>
-                <FootLockerLogo className="h-5 w-auto text-muted-light logo-item" />
-                <PacSunLogo className="h-5 w-auto text-muted-light logo-item" />
-                <ArkosHealthLogo className="h-5 w-auto text-muted-light logo-item" />
+                <FootLockerLogo className="h-5 w-auto text-muted logo-item" />
+                <PacSunLogo className="h-5 w-auto text-muted logo-item" />
+                <ArkosHealthLogo className="h-5 w-auto text-muted logo-item" />
                 <span className="whitespace-nowrap text-[10px] font-bold uppercase tracking-[0.25em] text-accent/60">
                   Team from
                 </span>
-                <DeepMindLogo className="h-6 w-auto text-muted-light logo-item" />
-                <StanfordLogo className="h-6 w-auto text-muted-light logo-item" />
-                <MITLogo className="h-5 w-auto text-muted-light logo-item" />
-                <NYULogo className="h-5 w-auto text-muted-light logo-item" />
+                <DeepMindLogo className="h-6 w-auto text-muted logo-item" />
+                <StanfordLogo className="h-6 w-auto text-muted logo-item" />
+                <MITLogo className="h-5 w-auto text-muted logo-item" />
+                <NYULogo className="h-5 w-auto text-muted logo-item" />
               </div>
             ))}
           </div>
@@ -110,61 +128,138 @@ export default function Home() {
       </section>
 
       {/* ═══════════════════════════════════════════
-          THE PROBLEM — Minimal text + animated counter
+          USE CASES — Tabbed section
       ═══════════════════════════════════════════ */}
-      <section id="problem" className="relative px-6 py-28 lg:py-40">
-        <div className="mx-auto max-w-5xl">
-          <div className="grid items-center gap-16 lg:grid-cols-2">
-            <div>
-              <span className="text-xs font-medium uppercase tracking-[0.2em] text-accent">
-                The shift
+      <section className="relative bg-gradient-to-b from-white via-blue-50/30 to-white px-6 py-28 lg:py-36">
+        <div className="mx-auto max-w-6xl">
+          <div className="mx-auto max-w-3xl text-center">
+            <span className="text-xs font-medium uppercase tracking-[0.2em] text-accent">
+              Platform
+            </span>
+            <h2 className="mt-4 font-heading text-4xl font-bold leading-tight text-secondary sm:text-5xl">
+              How Teams Use Sarva
+              <br />
+              <span className="gradient-text-subtle">for AI Search</span>
+            </h2>
+          </div>
+          <div className="mt-16">
+            <UseCaseTabs />
+          </div>
+        </div>
+      </section>
+
+      {/* ═══════════════════════════════════════════
+          METHODOLOGY — Inline (all on one page)
+      ═══════════════════════════════════════════ */}
+      <section id="methodology" className="relative overflow-hidden">
+        <MethodologySpine />
+
+        {/* Overview */}
+        <div className="relative px-6 py-20 lg:py-28">
+          <div className="mx-auto max-w-6xl">
+            <div className="mx-auto max-w-3xl text-center">
+              <span className="font-mono text-[10px] uppercase tracking-[0.3em] text-accent">
+                Our Methodology
               </span>
-              <h2 className="mt-6 font-heading text-4xl font-bold leading-tight text-secondary sm:text-5xl">
-                Search is no longer
-                <br />
-                <span className="gradient-text-subtle">ten blue links.</span>
+              <h2 className="mt-4 font-heading text-4xl font-bold text-secondary sm:text-5xl">
+                Eight systems.{" "}
+                <span className="gradient-text">One continuous loop.</span>
               </h2>
-              <p className="mt-6 max-w-lg text-base text-muted-light leading-relaxed">
-                LLMs synthesize answers and cite sources. If your content isn&apos;t
-                structured for generative engines, you&apos;re invisible.
+              <p className="mt-4 text-sm leading-relaxed text-muted sm:text-base">
+                Eight autonomous agents, one feedback loop. Each step feeds the next —
+                the system never stops re-measuring, re-training, re-deploying.
               </p>
             </div>
-            {/* Animated visual: shifting search paradigm */}
-            <div className="relative">
-              <div className="rounded-2xl border border-border bg-surface p-6">
-                {/* Old way - fading out */}
-                <div className="mb-6 opacity-40">
-                  <span className="text-[10px] font-bold uppercase tracking-widest text-muted">Traditional SEO</span>
-                  <div className="mt-3 space-y-2">
-                    {[85, 70, 55, 40, 25].map((w, i) => (
-                      <div key={i} className="flex items-center gap-3">
-                        <div className="h-2 rounded-full bg-border" style={{ width: `${w}%` }} />
-                        <span className="text-[10px] text-muted">#{i + 1}</span>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-                {/* New way - glowing */}
-                <div className="relative">
-                  <div className="absolute -inset-3 rounded-xl bg-accent/5 blur-sm" />
-                  <div className="relative">
-                    <span className="text-[10px] font-bold uppercase tracking-widest text-accent">GEO</span>
-                    <div className="mt-3 rounded-lg border border-accent/20 bg-surface-elevated p-4">
-                      <div className="flex items-start gap-3">
-                        <div className="mt-0.5 h-2 w-2 shrink-0 rounded-full bg-accent animate-pulse-glow" />
-                        <div>
-                          <p className="text-xs text-secondary leading-relaxed">
-                            &ldquo;The best running shoes for marathon training are the <span className="font-semibold text-accent">Nike Vaporfly Next%</span> and...&rdquo;
-                          </p>
-                          <span className="mt-2 inline-block rounded-full bg-accent/10 px-2 py-0.5 text-[9px] font-medium text-accent">
-                            AI-generated answer
-                          </span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
+            <div className="mt-12">
+              <SystemMap />
+            </div>
+          </div>
+        </div>
+
+        {/* Step 01 */}
+        <div className="relative px-6 py-24 lg:py-32">
+          <div className="mx-auto grid max-w-6xl items-center gap-12 lg:grid-cols-2">
+            <StepHeader
+              index="01"
+              title="Query Discovery &amp; Intent Mapping"
+              caption="We scan Google Trends, Reddit, Quora, and real-time conversations to generate ~50K conversational queries that mirror how users actually ask — adapting to seasons, events, and micro-trends."
+            />
+            <QueryStream />
+          </div>
+        </div>
+
+        {/* Step 02 */}
+        <div className="relative px-6 py-24 lg:py-32">
+          <div className="mx-auto max-w-6xl">
+            <StepHeader
+              index="02"
+              align="center"
+              title="Embedding &amp; Query Clustering"
+              caption="Queries collapse into 30–50 semantic clusters. Each centroid becomes an optimization target — mathematically optimal coverage."
+            />
+            <div className="mt-16">
+              <ClusterFormation />
+            </div>
+          </div>
+        </div>
+
+        {/* Step 03 */}
+        <div className="relative px-6 py-24 lg:py-32">
+          <div className="mx-auto grid max-w-6xl items-center gap-12 lg:grid-cols-2">
+            <div className="lg:order-2">
+              <AgentSwarm />
+            </div>
+            <div className="lg:order-1">
+              <StepHeader
+                index="03"
+                title="Real-World AI Visibility Measurement"
+                caption="Thousands of parallel agents interact directly with live AI interfaces — not APIs — replicating real user behavior. We measure brand mentions, ranking, and response structure across ChatGPT, Perplexity, and Gemini."
+              />
+            </div>
+          </div>
+        </div>
+
+        {/* Step 04 */}
+        <div className="relative px-6 py-24 lg:py-32">
+          <div className="mx-auto max-w-6xl">
+            <StepHeader
+              index="04"
+              align="center"
+              title="Domain-Specific Critic Model"
+              caption="A model fine-tuned on your vertical's AI interactions. It learns what content structures AI systems prefer — and improves as it keeps measuring."
+            />
+            <div className="mt-16">
+              <CriticEvolution />
+            </div>
+          </div>
+        </div>
+
+        {/* Step 05 */}
+        <div className="relative px-6 py-24 lg:py-32">
+          <div className="mx-auto max-w-6xl">
+            <StepHeader
+              index="05"
+              align="center"
+              highlight="Core differentiator"
+              title="Continuous Learning &amp; Adaptation"
+              caption="Click any node. The loop never stops — it just keeps re-measuring, re-training, and re-deploying as user intent and AI platforms evolve."
+            />
+            <div className="mt-16">
+              <OptimizationLoop />
+            </div>
+          </div>
+        </div>
+
+        {/* Steps 06–08 */}
+        <div className="relative px-6 py-24 lg:py-32">
+          <div className="mx-auto max-w-6xl">
+            <StepHeader
+              index="06 — 08"
+              title="Optimize, Sandbox, Deploy, Monitor"
+              caption="The critic generates new content, every change is sandbox-tested for regressions, approved updates ship, and post-deploy performance feeds back into the loop."
+            />
+            <div className="mt-12">
+              <DeployFlow />
             </div>
           </div>
         </div>
@@ -196,8 +291,8 @@ export default function Home() {
               { Logo: NYULogo, label: "Education" },
             ].map(({ Logo, label }) => (
               <div key={label + Logo.name} className="group text-center">
-                <div className="mx-auto flex h-20 w-full items-center justify-center rounded-xl border border-border bg-surface transition-all group-hover:border-accent/20 group-hover:bg-surface-light">
-                  <Logo className="h-7 w-auto text-muted-light transition-all group-hover:text-secondary" />
+                <div className="mx-auto flex h-20 w-full items-center justify-center rounded-xl border border-border bg-white transition-all group-hover:border-accent/20 group-hover:bg-surface">
+                  <Logo className="h-7 w-auto text-muted transition-all group-hover:text-secondary" />
                 </div>
                 <span className="mt-3 block text-xs uppercase tracking-widest text-muted">{label}</span>
               </div>
@@ -206,14 +301,30 @@ export default function Home() {
         </div>
       </section>
 
-    
+      {/* ═══════════════════════════════════════════
+          BACKED BY
+      ═══════════════════════════════════════════ */}
+      <section id="backed-by" className="relative overflow-hidden px-6 py-20 lg:py-28">
+        <div className="relative z-10 mx-auto max-w-4xl">
+          <div className="rounded-3xl border border-border bg-surface p-12 text-center md:p-16">
+            <span className="text-xs font-medium uppercase tracking-[0.2em] text-accent">
+              Backed by
+            </span>
+            <div className="mx-auto mt-8 flex justify-center">
+              <AntlerLogo className="h-10 w-auto text-secondary" />
+            </div>
+            <p className="mt-6 text-sm text-muted">
+              New York City
+            </p>
+          </div>
+        </div>
+      </section>
 
       {/* ═══════════════════════════════════════════
           CTA / CONTACT
       ═══════════════════════════════════════════ */}
       <section id="contact" className="relative overflow-hidden px-6 py-28 lg:py-36">
-        <div className="glow-orb glow-orb-blue absolute left-1/4 bottom-0 h-[400px] w-[400px] opacity-15 animate-float" />
-        <div className="glow-orb glow-orb-teal absolute right-1/4 top-0 h-[300px] w-[300px] opacity-10 animate-float" style={{ animationDelay: "-4s" }} />
+        <div className="absolute inset-0 bg-gradient-to-br from-blue-50/50 via-white to-indigo-50/30" />
 
         <div className="relative z-10 mx-auto max-w-4xl text-center">
           <h2 className="font-heading text-4xl font-bold text-secondary sm:text-5xl lg:text-6xl">
@@ -222,15 +333,15 @@ export default function Home() {
             <span className="gradient-text">AI search results?</span>
           </h2>
 
-          <p className="mx-auto mt-6 max-w-md text-base text-muted-light leading-relaxed">
-            Tell us about your products. We&apos;ll show you exactly how much
+          <p className="mx-auto mt-6 max-w-md text-base text-muted leading-relaxed">
+            Tell us about your brand. We&apos;ll show you exactly how much
             visibility you&apos;re leaving on the table.
           </p>
 
           <div className="mt-12">
             <a
               href="mailto:shubham@sarvahq.com"
-              className="animate-pulse-glow group inline-flex items-center gap-3 rounded-xl bg-accent px-10 py-5 text-base font-semibold text-primary transition-all hover:bg-accent-light"
+              className="animate-pulse-glow group inline-flex items-center gap-3 rounded-xl bg-accent px-10 py-5 text-base font-semibold text-white transition-all hover:bg-accent-dim"
             >
               <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />

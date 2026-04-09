@@ -322,7 +322,7 @@ export default function ClusterFormation() {
               cx={c.x}
               cy={c.y}
               r="9"
-              fill="#1E293B"
+              fill="#E2E8F0"
               stroke="#60A5FA"
               strokeWidth="1.5"
             />
@@ -345,7 +345,7 @@ export default function ClusterFormation() {
               fontSize="11"
               className="font-heading"
               fontWeight="600"
-              fill="#F1F5F9"
+              fill="#0F172A"
             >
               {c.label}
             </text>
