@@ -47,70 +47,70 @@ const TABS = [
     statCaption: "in time spent on AI visibility tracking",
     svgType: "dashboard" as const,
   },
-  {
-    id: "seo",
-    label: "GEO / SEO",
-    title: "Toolkit for",
-    subtitle: "AI Search Optimization",
-    description:
-      "Unlock insights and opportunities to drive search rankings in both traditional and AI-powered search.",
-    summary:
-      "Optimize your content to rank in AI-powered search results and increase organic visibility.",
-    features: [
-      { bold: "Track brand mentions", rest: " across 8+ major LLMs" },
-      { bold: "Identify content gaps", rest: " AI can't answer" },
-      { bold: "Monitor competitor", rest: " AI visibility in real-time" },
-    ],
-    before: "Invisible in\nAI search results",
-    after: "Top positions in\nsearch responses",
-    stat: "2.5",
-    statUnit: "x increase",
-    statCaption: "in AI-driven organic traffic",
-    svgType: "search" as const,
-  },
-  {
-    id: "content",
-    label: "Content Strategy",
-    title: "AI-Optimized",
-    subtitle: "Content Strategy",
-    description:
-      "Create content that AI platforms love to cite. Our critic model tells you exactly what to write and how to structure it.",
-    summary:
-      "Develop content strategies that maximize visibility in AI-generated answers.",
-    features: [
-      { bold: "Content gap analysis", rest: " for AI queries" },
-      { bold: "AI-friendly content", rest: " templates" },
-      { bold: "Citation tracking", rest: " and optimization" },
-    ],
-    before: "Content\nignored by AI",
-    after: "Primary source\nfor AI answers",
-    stat: "3",
-    statUnit: "x increase",
-    statCaption: "in AI content citations",
-    svgType: "content" as const,
-  },
-  {
-    id: "brand",
-    label: "Brand Monitoring",
-    title: "AI-Powered",
-    subtitle: "Brand Intelligence",
-    description:
-      "Track how AI platforms discuss your brand. Get real-time alerts on mentions, sentiment, and competitive positioning.",
-    summary:
-      "Optimize your content to rank in AI-powered search results and increase organic visibility.",
-    features: [
-      { bold: "Press kits", rest: " optimized for AI citation" },
-      { bold: "Real-time brand mention", rest: " alerts" },
-      { bold: "Sentiment analysis", rest: " across AI platforms" },
-      { bold: "Crisis detection", rest: " and response tools" },
-    ],
-    before: "Reactive to\nAI misinformation",
-    after: "Proactive brand\nnarrative control",
-    stat: "85",
-    statUnit: "% faster",
-    statCaption: "response to brand mentions",
-    svgType: "brand" as const,
-  },
+  // {
+  //   id: "seo",
+  //   label: "GEO / SEO",
+  //   title: "Toolkit for",
+  //   subtitle: "AI Search Optimization",
+  //   description:
+  //     "Unlock insights and opportunities to drive search rankings in both traditional and AI-powered search.",
+  //   summary:
+  //     "Optimize your content to rank in AI-powered search results and increase organic visibility.",
+  //   features: [
+  //     { bold: "Track brand mentions", rest: " across 8+ major LLMs" },
+  //     { bold: "Identify content gaps", rest: " AI can't answer" },
+  //     { bold: "Monitor competitor", rest: " AI visibility in real-time" },
+  //   ],
+  //   before: "Invisible in\nAI search results",
+  //   after: "Top positions in\nsearch responses",
+  //   stat: "2.5",
+  //   statUnit: "x increase",
+  //   statCaption: "in AI-driven organic traffic",
+  //   svgType: "search" as const,
+  // },
+  // {
+  //   id: "content",
+  //   label: "Content Strategy",
+  //   title: "AI-Optimized",
+  //   subtitle: "Content Strategy",
+  //   description:
+  //     "Create content that AI platforms love to cite. Our critic model tells you exactly what to write and how to structure it.",
+  //   summary:
+  //     "Develop content strategies that maximize visibility in AI-generated answers.",
+  //   features: [
+  //     { bold: "Content gap analysis", rest: " for AI queries" },
+  //     { bold: "AI-friendly content", rest: " templates" },
+  //     { bold: "Citation tracking", rest: " and optimization" },
+  //   ],
+  //   before: "Content\nignored by AI",
+  //   after: "Primary source\nfor AI answers",
+  //   stat: "3",
+  //   statUnit: "x increase",
+  //   statCaption: "in AI content citations",
+  //   svgType: "content" as const,
+  // },
+  // {
+  //   id: "brand",
+  //   label: "Brand Monitoring",
+  //   title: "AI-Powered",
+  //   subtitle: "Brand Intelligence",
+  //   description:
+  //     "Track how AI platforms discuss your brand. Get real-time alerts on mentions, sentiment, and competitive positioning.",
+  //   summary:
+  //     "Optimize your content to rank in AI-powered search results and increase organic visibility.",
+  //   features: [
+  //     { bold: "Press kits", rest: " optimized for AI citation" },
+  //     { bold: "Real-time brand mention", rest: " alerts" },
+  //     { bold: "Sentiment analysis", rest: " across AI platforms" },
+  //     { bold: "Crisis detection", rest: " and response tools" },
+  //   ],
+  //   before: "Reactive to\nAI misinformation",
+  //   after: "Proactive brand\nnarrative control",
+  //   stat: "85",
+  //   statUnit: "% faster",
+  //   statCaption: "response to brand mentions",
+  //   svgType: "brand" as const,
+  // },
 ];
 
 function TabSVG({ type }: { type: (typeof TABS)[number]["svgType"] }) {
