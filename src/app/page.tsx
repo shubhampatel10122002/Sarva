@@ -109,7 +109,7 @@ export default function Home() {
             {[...Array(3)].map((_, i) => (
               <div key={i} className="flex items-center gap-14 px-8">
                 <span className="whitespace-nowrap text-[10px] font-bold uppercase tracking-[0.25em] text-accent/60">
-                  Trusted by
+                  Worked with
                 </span>
                 <FootLockerLogo className="h-5 w-auto text-muted logo-item" />
                 <PacSunLogo className="h-5 w-auto text-muted logo-item" />
