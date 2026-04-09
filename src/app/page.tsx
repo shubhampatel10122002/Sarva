@@ -301,7 +301,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ═══════════════════════════════════════════
+      /* {/* ═══════════════════════════════════════════
           BACKED BY
       ═══════════════════════════════════════════ */}
       <section id="backed-by" className="relative overflow-hidden px-6 py-20 lg:py-28">
@@ -318,7 +318,7 @@ export default function Home() {
             </p>
           </div>
         </div>
-      </section>
+      </section> */
 
       {/* ═══════════════════════════════════════════
           CTA / CONTACT
