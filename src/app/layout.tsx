@@ -24,17 +24,17 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "SarvaHQ — Generative Engine Optimization for E-Commerce",
+  title: "SarvaHQ — Generative Engine Optimization for Brands",
   description:
-    "We make LLMs find your products first. SarvaHQ optimizes your e-commerce content for ChatGPT, Perplexity, Google AI Overviews, and every generative search engine. Team from Google DeepMind, Stanford, MIT.",
+    "Make AI search find your brand first. SarvaHQ optimizes your content for ChatGPT, Perplexity, Gemini, and every generative search engine. Team from Google DeepMind, Stanford, MIT.",
   keywords: [
     "generative engine optimization",
     "GEO",
     "LLM SEO",
     "AI search optimization",
-    "e-commerce AI",
-    "generative search",
     "AI visibility",
+    "generative search",
+    "brand visibility AI",
     "methodology",
     "query clustering",
     "AI visibility measurement",
@@ -42,9 +42,9 @@ export const metadata: Metadata = {
     "continuous learning LLM SEO",
   ],
   openGraph: {
-    title: "SarvaHQ — Generative Engine Optimization for E-Commerce",
+    title: "SarvaHQ — Generative Engine Optimization for Brands",
     description:
-      "Make AI search find your products first. GEO for e-commerce brands.",
+      "Make AI search find your brand first. GEO for brands that want to own AI search results.",
     url: "https://sarvahq.com",
     siteName: "SarvaHQ",
     type: "website",

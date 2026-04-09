@@ -239,7 +239,7 @@ export default function OptimizationLoop() {
         <g ref={orbitGroupRef} transform={`translate(${CENTER}, ${CENTER - RING_R})`}>
           <circle r="7" fill="#3B82F6" opacity="0.35" filter="url(#loop-glow)" />
           <circle r="4" fill="#93C5FD" />
-          <circle r="1.8" fill="#F1F5F9" />
+          <circle r="1.8" fill="#1D4ED8" />
         </g>
 
         {/* Node buttons */}
@@ -287,7 +287,7 @@ export default function OptimizationLoop() {
               )}
               <circle
                 r={NODE_R}
-                fill={isActive ? "url(#loop-node-grad)" : "#0F172A"}
+                fill={isActive ? "url(#loop-node-grad)" : "#FFFFFF"}
                 stroke={isActive ? "#93C5FD" : "rgba(59, 130, 246, 0.35)"}
                 strokeWidth={isLocked ? 2.5 : 1.5}
                 style={{ transition: "fill 0.3s ease, stroke 0.3s ease" }}
@@ -309,7 +309,7 @@ export default function OptimizationLoop() {
                 fontSize="12"
                 fontWeight="600"
                 className="font-heading"
-                fill={isActive ? "#F8FAFC" : "#CBD5E1"}
+                fill={isActive ? "#FFFFFF" : "#475569"}
                 style={{ transition: "fill 0.3s ease", pointerEvents: "none" }}
               >
                 {node.title}

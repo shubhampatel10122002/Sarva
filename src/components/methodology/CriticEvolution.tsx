@@ -262,7 +262,7 @@ export default function CriticEvolution() {
           width={L.w}
           height={L.h}
           rx="14"
-          fill="#0B1220"
+          fill="#F0F4FF"
           stroke="rgba(59, 130, 246, 0.22)"
           strokeWidth="1"
         />
@@ -297,7 +297,7 @@ export default function CriticEvolution() {
                   y="1"
                   fontSize="10"
                   className="font-mono"
-                  fill="#CBD5E1"
+                  fill="#475569"
                 >
                   {sig}
                 </text>
@@ -323,7 +323,7 @@ export default function CriticEvolution() {
           width={C.w}
           height={C.h}
           rx="14"
-          fill="#0B1220"
+          fill="#F0F4FF"
           stroke="rgba(59, 130, 246, 0.22)"
           strokeWidth="1"
         />
@@ -371,7 +371,7 @@ export default function CriticEvolution() {
           strokeWidth="1.5"
         />
         {/* Core */}
-        <circle cx={BLOB_CENTER_X} cy={BLOB_CENTER_Y} r="5" fill="#F1F5F9" />
+        <circle cx={BLOB_CENTER_X} cy={BLOB_CENTER_Y} r="5" fill="#1D4ED8" />
         <circle
           cx={BLOB_CENTER_X}
           cy={BLOB_CENTER_Y}
@@ -412,7 +412,7 @@ export default function CriticEvolution() {
           width={R.w}
           height={R.h}
           rx="14"
-          fill="#0B1220"
+          fill="#F0F4FF"
           stroke="rgba(59, 130, 246, 0.22)"
           strokeWidth="1"
         />

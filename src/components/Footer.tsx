@@ -1,6 +1,6 @@
 export default function Footer() {
   return (
-    <footer className="border-t border-white/5 bg-primary">
+    <footer className="border-t border-border bg-surface">
       <div className="mx-auto max-w-7xl px-6 py-16">
         <div className="flex flex-col gap-12 md:flex-row md:justify-between">
           <div className="max-w-xs">
@@ -8,8 +8,8 @@ export default function Footer() {
               sarva<span className="text-accent">hq</span>
             </span>
             <p className="mt-3 text-sm text-muted leading-relaxed">
-              Generative Engine Optimization for e-commerce.
-              Make LLMs find your products first. Based in New York City.
+              Generative Engine Optimization for brands.
+              Make AI search find you first. Based in New York City.
             </p>
           </div>
 
@@ -19,13 +19,13 @@ export default function Footer() {
                 Navigate
               </span>
               <div className="mt-4 flex flex-col gap-3">
-                <a href="/methodology" className="text-sm text-muted-light transition-colors hover:text-accent">
+                <a href="#methodology" className="text-sm text-muted-light transition-colors hover:text-accent">
                   Methodology
                 </a>
-                <a href="/#team" className="text-sm text-muted-light transition-colors hover:text-accent">
+                <a href="#team" className="text-sm text-muted-light transition-colors hover:text-accent">
                   Team
                 </a>
-                <a href="/#contact" className="text-sm text-muted-light transition-colors hover:text-accent">
+                <a href="#contact" className="text-sm text-muted-light transition-colors hover:text-accent">
                   Contact
                 </a>
               </div>
@@ -38,10 +38,10 @@ export default function Footer() {
                 <a href="mailto:shubham@sarvahq.com" className="text-sm text-muted-light transition-colors hover:text-accent">
                   shubham@sarvahq.com
                 </a>
-                <span className="text-sm text-muted-light">
+                <span className="text-sm text-muted">
                   7 World Trade Center
                 </span>
-                <span className="text-sm text-muted-light">
+                <span className="text-sm text-muted">
                   New York, NY
                 </span>
               </div>
@@ -49,7 +49,7 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="mt-16 flex flex-col items-center justify-between gap-4 border-t border-white/5 pt-8 sm:flex-row">
+        <div className="mt-16 flex flex-col items-center justify-between gap-4 border-t border-border pt-8 sm:flex-row">
           <span className="text-xs text-muted">
             &copy; {new Date().getFullYear()} SarvaHQ. All rights reserved.
           </span>

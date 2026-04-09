@@ -175,7 +175,7 @@ export default function DeployFlow() {
                 width={NODE_W}
                 height={NODE_H}
                 rx="12"
-                fill={hot ? "#1E293B" : "#0F172A"}
+                fill={hot ? "#EFF6FF" : "#FFFFFF"}
                 stroke={hot ? "#60A5FA" : "rgba(59, 130, 246, 0.25)"}
                 strokeWidth="1.2"
                 style={{ transition: "fill 0.3s ease, stroke 0.3s ease" }}
@@ -197,7 +197,7 @@ export default function DeployFlow() {
                 fontSize="15"
                 className="font-heading"
                 fontWeight="600"
-                fill={hot ? "#F1F5F9" : "#CBD5E1"}
+                fill={hot ? "#0F172A" : "#475569"}
                 style={{ transition: "fill 0.3s ease" }}
               >
                 {stage.label}
@@ -207,7 +207,7 @@ export default function DeployFlow() {
                 y={NODE_Y + 26}
                 fontSize="9"
                 className="font-mono"
-                fill={hot ? "#94A3B8" : "#475569"}
+                fill={hot ? "#64748B" : "#94A3B8"}
                 style={{ transition: "fill 0.3s ease" }}
               >
                 {stage.sub}
@@ -217,7 +217,7 @@ export default function DeployFlow() {
                 cx={cx + NODE_W / 2 - 12}
                 cy={NODE_Y - NODE_H / 2 + 12}
                 r="3"
-                fill={hot ? "#10B981" : "#334155"}
+                fill={hot ? "#10B981" : "#CBD5E1"}
                 style={{ transition: "fill 0.3s ease" }}
               />
               {/* Caption under box */}

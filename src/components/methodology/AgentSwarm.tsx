@@ -130,14 +130,14 @@ export default function AgentSwarm() {
               width="110"
               height="28"
               rx="14"
-              fill="#111827"
+              fill="#F9FAFB"
               stroke="rgba(59, 130, 246, 0.3)"
               strokeWidth="1"
             />
             <circle cx={DEST_X - 40} cy={dest.y} r="3" fill="#10B981">
               <animate attributeName="opacity" values="1;0.3;1" dur="1.5s" repeatCount="indefinite" />
             </circle>
-            <text x={DEST_X - 30} y={dest.y + 3} fontSize="10" className="font-mono" fill="#CBD5E1">
+            <text x={DEST_X - 30} y={dest.y + 3} fontSize="10" className="font-mono" fill="#475569">
               {dest.label}
             </text>
           </g>
